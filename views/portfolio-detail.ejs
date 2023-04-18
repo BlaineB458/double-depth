@@ -1,0 +1,49 @@
+<%- include('includes/head', {pageTitle : 'Admin Portfolio | Double Depth'}) %>
+<link rel="stylesheet" href="/styles/admin.css">
+<script src="/scripts/gallery-controls.js" defer></script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DDNQGL"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <section class="portfolio-gallery-section">
+        <div class="gallery-controls">
+            <a id="close-cross" href="/portfolio"><strong>&#10005;</strong></a>
+            <% if(portfolio.images.length > 1){ %>
+                <div class="arrows">
+                    <img class="arrow-left" src="/imgs/arrow-left-icon.png" alt="">
+                    
+                    <img class="arrow-right" src="/imgs/arrow-right-icon.png" alt="">
+                </div>
+                <% } %> 
+                
+                <div class="counter-container">
+                    <h3 id="image-index">1</h3>
+                    <h3> / <%= portfolio.images.length  %></h3>
+                </div>
+            </div>
+        <div id="gallery-container">
+            <% for(const img of portfolio.images){ %>
+                <% if(portfolio.images.indexOf(img) == 0){ %>
+                    <img class="gallery-active" src="/portfolios/assets/images/<%= img.filename %>" alt="">
+                    
+                    <% }else{ %> 
+                        <img src="/portfolios/assets/images/<%= img.filename %>" alt="">
+                        <% } %> 
+                        <% } %> 
+                    </div>
+                    <div id="service-type-tag">
+                        <h4><%= portfolio.serviceType %></h4>
+                    </div>
+                    <div id="company-name-tag">
+                        <h2><%= portfolio.companyName %></h2>
+                        <div id="date-tag">
+                            <h3><%= portfolio.date %></h3>
+                        </div>
+                    </div>
+                    </section>
+                </body>
+                
+</html>

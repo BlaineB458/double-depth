@@ -1,0 +1,52 @@
+<%- include('../includes/head', {pageTitle : 'New Portfolio | Double Depth'}) %>
+<link rel="stylesheet" href="/styles/admin.css">
+<script src="/scripts/admin-image-counter.js" defer></script>
+</head>
+
+    <%- include('../includes/navbar') %> 
+
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DDNQGL"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <section class="portfolio-add-section">
+        <div class="portfolio-add-container">
+            <form id="portfolio-add-form" action="/portfolio/<%= portfolio.id %>?_csrf=<%= locals.csrfToken %>" method="POST" enctype="multipart/form-data">
+                <h2>Portfolio Update</h2>
+                <ul>
+                    <li>
+                        <label for="companyName">Company's Name</label>
+                        <input type="text" id="companyName" name="companyName" value="<%= portfolio.companyName%>" required>
+                    </li>
+                    <li>
+                        <label for="serviceType">Service Type</label>
+                        <input type="text" id="serviceType" name="serviceType" value="<%= portfolio.serviceType%>" required>
+                    </li>
+                    <li id="image-upload-container">
+                        <h2>Project Images</h2>
+                        <label id="upload-label" for="images">Upload Images</label>
+                        <input type="file" id="images" name="images" accept="image/png,image,jpg" max="10" multiple hidden>
+                        <% if(portfolio.images.length === 0){ %> 
+                        <span id="file-counter-tag">Up To 10 images | 2.5MB file size limit</span>
+                        <% }else{ %> 
+                            <span id="file-counter-tag">(<%= portfolio.images.length %>/10) Images uploaded</span>
+                        <% } %> 
+                    </li>
+                    <li>
+                        <label for="description">Project Description</label>
+                        <input type="text" id="description" name="description" value="<%= portfolio.description%>" required>
+                    </li>
+                    <li>
+                        <button type="submit" class="btn">Update</button>
+                    </li>
+
+                    
+                </ul>
+            </form>
+        </div>
+    </section>
+</body>
+
+<%- include('../includes/footer') %> 

@@ -1,0 +1,36 @@
+<%- include('../includes/head', {pageTitle : 'Admin Portfolio | Double Depth'}) %>
+<link rel="stylesheet" href="/styles/admin.css">
+<script src="/scripts/portfolio-management.js" defer></script>
+</head>
+
+
+
+    <%- include('../includes/navbar') %> 
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DDNQGL"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <section class="admin-update-portfolio">
+        <div class="admin-portfolio-options">
+            <a href="/admin/portfolio/new"><button class="btn-secondary">+ Add New Project</button></a>
+        </div>
+        
+            <ul class="portolio-layout">
+                <% if(portfolios.length >0){
+                    for(const portfolio of portfolios){ %> 
+                    <li>
+                        <%- include('../includes/portfolio-item', {portfolio: portfolio}) %> 
+                    </li>
+                <% }
+             }else{ %>
+                    <h2>Hmmm.</h2>
+                    <p>Looks like we couldn't load our projects - please try again in a moment!</p>
+                    <% } %>
+            </ul>
+           
+    </section>
+</body>
+
+<%- include('../includes/footer') %> 

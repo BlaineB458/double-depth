@@ -1,0 +1,27 @@
+<div class="portfolio-container">
+
+    <% if(locals.isAdmin){ %> 
+     <button id="delete-portfolio-btn" class="btn-secondary" data-id="<%= portfolio.id %>" data-csrf="<%= locals.csrfToken %>">Delete</button> 
+    <% } %> 
+    <% if(locals.isAdmin){ %> 
+     <a href="/portfolio/<%= portfolio.id %>"> 
+    <% }else{ %>
+        <a href="/portfolio-detail/<%= portfolio.id %>">
+        <% } %> 
+    <div class="portfolio-preview-item"> 
+    <img src="<%= portfolio.imgUrl %>" alt="">
+       <div class="portfolio-preview-info">
+           <div>
+               <h2><%= portfolio.companyName %> </h2>
+               <p><%= portfolio.serviceType %> </p>
+           </div>
+       
+       <p><%= portfolio.date %></p>
+    </div>
+    </a>
+
+
+
+</div>
+
+       

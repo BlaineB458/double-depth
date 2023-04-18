@@ -1,0 +1,181 @@
+<%- include('includes/head', {pageTitle : 'Home | Double Depth'}) %>
+<script src="scripts/steps-slider.js" defer></script>
+<script src="//code.jivosite.com/widget/fQl0HLkz5k" async></script>
+
+
+</head>
+    <%- include('includes/navbar') %> 
+    
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DDNQGL"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+        <section class="hero">
+            <div class="container">
+                
+                
+                <div class="hero-cta-container">
+                    <% if(locals.isAdmin) { %>
+                    <h1>Welcome Admin</h1>
+                    <h3>Here you can update portfolio and services!</h3>
+                    <a href="/portfolio"><button class="btn">Check Out Our Portfolio</button></a>
+
+                <% }else{ %> 
+                <h1>Welcome <span><%= username %></span></h1>
+                <h3>We believe that every business has the potential to be great.</h3>
+                    <h3>We're a full-service production and marketing agency that specializes in cinematography and website design. We work with brands to create content that will get them noticed online.</h3>
+                <a href="/portfolio"><button class="btn">Check Out Our Portfolio</button></a>
+                <% } %> 
+            </div>
+
+            
+        </div> 
+        <div class="scroll-left">
+            <div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quam vitae ducimus modi aliquam odit!</p>
+            </div>
+        </div>
+
+            
+    </section>
+    <section class="steps-section">
+        <h1>HOW WE WORK</h1>
+        <div id="steps-tag">
+
+            <p>Our process to revolutionize your business</p>
+
+            
+        </div>
+        <div class="steps-container">
+            
+            <div class="why-us">
+                <h2>Why Us?</h2>
+                <p>We've got you covered on all fronts!</p>
+                <p> We're a team of experienced professionals with a passion for delivering a high-quality product.</p>    
+                <p>We know that the only way we can truly help you is if we understand your needs, and that's why we've created an all-inclusive toolkit that contains everything you need to make your business successful.</p>
+                <p>We're a team of experienced professionals with a passion for delivering a high-quality product. We work together with you to ensure that every project is completed on time and within budget, using the highest quality production processes. Because all members of our team are skilled in multiple disciplines, we can take on any kind of challenge -- whether it's designing a website, managing SEO campaigns, shooting a music video or even making your pet famous!</p>
+            </div>
+            <div>
+                <%- include('includes/steps') %> 
+                 <a style="text-decoration: none;" class="btn" href="/home#contact-section">Get in contact!</a>
+            </div>
+        </div>
+
+    </section>
+    <section id="home-about-us-section">
+        <div>
+            <h1>ABOUT</h1>
+            <div class="about-tag">
+
+                <p id="meet-our-team-tag">Meet our team</p>
+
+             </div>
+        </div>
+        <div class="card-container">
+             <div class="mission-card">
+                <div class="mission-card-text">OUR MISSION</div>
+                <div class="card-divider"></div>
+                <p class="about-us-home-paragraph">
+                    Helping your business grow is the heartbeat of our team. We know that your business is the most important thing in your world, and we want to do everything we can to make sure it thrives. That's why we've created Double Depth, a service that provides great value for your business and helps you improve its bottom line.
+                </p>
+                <div class="card-divider"></div>
+                <p>~~ The Double Depth Team ~~</p>
+            </div>
+            <div class="about-container">
+                <div class="about-us-card">
+                    <div>
+                                                 <img src="imgs/profile-dummy.png" alt="">
+                                <div class="card-divider"></div>
+                                <div class="about-us-card-name">DASHMIR NAIDOO</div>
+                    </div>
+       
+                                <p class="about-us-home-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                    voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            </div>
+                    
+                            <div class="about-us-card">
+                                <div>
+                                    <img src="imgs/profile-dummy.png" alt="">
+                                    <div class="card-divider"></div>
+                                    <div class="about-us-card-name">BLAINE BALLARD</div>
+
+                                </div>
+                                <p class="about-us-home-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                    voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    
+                    
+                            </div>
+            </div>
+         
+    
+        </div>
+    
+    
+    
+    
+    </section>
+    <section class="services-section">
+        <div class="service-heading">
+            <h1>SERVICES</h1>
+            <div class="services-tag">
+
+                <p>Learn how our industry leading services can help your business</p>
+
+            </div>
+        </div>
+        <div class="service-container">
+            <div class="service-layout">
+                <div class="service">
+                    <img src="imgs/webdev-icon.png" alt="">
+                    <h2>Website Development</h2>
+                    <p>Custom websites, built to your needs with powerful and responsive design. We craft websites that both look and work great. </p>
+                    <div>
+                        <button class="btn-secondary">Learn More</button>
+                    </div>
+                </div>
+                <div class="service">
+                    <img src="imgs/cinema-icon.png" alt="">
+                    <h2>Cinematography</h2>
+                    <p>Full service video production. Commercials, music videos, events, and documentaries. 4k equipped steady hands, creative minds and speedy editing.</p>
+                    <div>
+                        <button class="btn-secondary">Learn More</button>
+                    </div>
+                </div>
+                <div class="service">
+                    <img src="imgs/copywriting-icon.png" alt="">
+                    <h2>Copywriting</h2>
+                    <p>Words matter. The words you write are the foundation of your brand. We’ll tell your audience what you're about, and help you stand out from the crowd. </p>
+                    <div>
+                        <button class="btn-secondary">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div>
+            <button class="explore-btn">Explore All</button>
+        </div>
+    </section>
+    <section id="contact-section">
+        <div class="contact-tag">
+                <h1>Still Have Questions?</h1>
+                <p>Contact us. Replies within 48 hours.</p>
+        </div>
+
+      
+                <a href="mailto:contact@doubledepth.org">
+                            <button class="btn-secondary">Send Us An Email!</button> 
+                </a>
+    </section>
+</body>
+
+<%- include('includes/footer') %> 

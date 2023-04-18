@@ -1,0 +1,56 @@
+<%- include('includes/head', {pageTitle : 'Signup | Double Depth'}) %>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DDNQGL"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+   <section class="signup-section">
+       
+       <img src="imgs/double-depth-logo.png" alt="">
+       
+       <div class="form-container">
+           <h1>Sign Up</h1>
+           <% if(inputData.errorMsg) { %> 
+                <section class="alert">
+                    <span>
+                        <strong>!</strong>
+                    </span>
+
+                    <p><%= inputData.errorMsg %></p>
+                </section>
+           <% }else{ %> 
+           <p>Welome back | <strong> Double Depth &#xA9</strong></p>
+           <% } %> 
+           <form action="/signup" method="POST">
+               <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+            <ul>
+                <li>
+                     <label for="username">Username</label>
+                    <input type="text" id="username" name="username" value="<%= inputData.username %>" required>
+                </li>
+                <li>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="<%= inputData.email %>"required>
+                </li>
+                <li>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" value="<%= inputData.password %>" required>
+                </li>
+                <li>
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </li>
+            </ul>
+            
+            <button type="submit" class="btn">Sign Up</button>
+         
+          
+        </form>
+        <p>Already have an account? <a href="/login"><strong>Login</strong></a></p>
+    </div>
+   </section>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+
+<header>
+
+    <nav class="navbar">
+        <a href="/home">
+            <ol class="navbar-branding">
+                <li>
+                    <img src="/imgs/double-depth-logo.png" alt="">
+                </li>
+                <li>
+                    <h1>Double Depth</h1>
+                </li>
+            </ol>
+    
+        </a>
+        <ol class="navbar-options">
+            <% if(locals.isAdmin){ %>
+            <li>
+                <a class="nav-text-link" href="/project-delivery">
+                    <h2>Project Delivery</h2>
+                </a>
+            </li>
+            <% }else if(locals.isAuth){ %>
+                <li>
+                    <a class="nav-text-link" href="/project-collection">
+                        <h2>Project Collection</h2>
+                    </a>
+                </li>
+                <% } %>
+            <li>
+                <a class="nav-text-link" href="/analytics">
+                    <h2>Analytics</h2>
+                </a>
+            </li>
+            <li>
+                <a class="nav-text-link" href="/services">
+                    <h2>Services</h2>
+                </a>
+            </li>
+            <li>
+                <a class="nav-text-link" href="/portfolio">
+                    <h2>Portfolio</h2>
+                </a>
+            </li>
+            <li>
+                <a class="nav-text-link" href="/home#home-about-us-section">
+                    <h2>About</h2>
+    
+                </a>
+            </li>
+            <li id="contact-button">
+                <a href="mailto:contact@doubledepth.org?subject = Service Enquiry">
+                    <h2>Contact</h2>
+    
+                </a>
+            </li>
+            <% if(!locals.isAuth){ %> 
+            <li>
+                <a href="/login">
+                    <button class="btn-secondary">Login</button>
+
+                </a>
+            </li>
+            <% } %> 
+            <% if(locals.isAuth) { %>
+            <li>
+                <form action="/logout" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+                    
+                    <button class="btn-secondary" type="submit">logout</button>
+                        
+                </form>
+        
+    
+            </li>
+            <% } %> 
+        
+        </ol>
+        <div class="navbar-options-mobile">
+            <button id="mobile-burger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        
+        </div>
+        
+    </nav>
+
+</header>    
+<aside id="mobile-menu">
+
+    <div class="mobile-menu-nav">
+        <img src="/imgs/double-depth-logo.png" alt="">
+        <p><span>X</span></p>
+    </div>
+  
+    <ul>
+        <li>
+            <a class="nav-text-link" href="/project-delivery">
+                <h2>Project Delivery</h2>
+            </a>
+        </li>
+        <li>
+            <a class="nav-text-link" href="/services">
+                <h2>Services</h2>
+            </a>
+        </li>
+        <li>
+            <a class="nav-text-link" href="/portfolio">
+                <h2>Portfolio</h2>
+            </a>
+        </li>
+        <li id="contact-button">
+            <a href="/#contact-section">
+                <h2>Contact</h2>
+                
+            </a>
+        </li>
+        <% if(locals.isAuth) { %>
+            <li>
+                <form action="/logout" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+                    
+                    <button class="btn-secondary" type="submit">logout</button>
+                    
+                </form>
+                
+                
+            </li>
+        
+            <% } %> 
+            
+        </ul>
+    </aside>
+    

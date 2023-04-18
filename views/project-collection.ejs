@@ -1,0 +1,36 @@
+<%- include('./includes/head', {pageTitle : 'Project Collection | Double Depth'}) %>
+<link rel="stylesheet" href="/styles/admin.css">
+<script src="/scripts/admin-image-counter.js" defer></script>
+<script src="/scripts/image-preview.js" defer></script>
+</head>
+
+    <%- include('./includes/navbar') %> 
+
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DDNQGL"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <section class="project-collection-section">
+        <% projects.forEach(function (proj){ %>
+            <div class="project-container">
+            <h2><%= proj.projectTitle %></h2>
+            <p><%= proj.date %></p>
+            <div class="project-button-container">
+                <p><%= proj.googleDriveLink %></p>
+     <a href="<%= proj.googleDriveLink %>" target="_blank">
+
+                            
+                                <button class="btn">Open Project</button>
+                            </a>
+
+            </div>
+                       
+            </div>
+                
+            <% }); %>
+    </section>
+</body>
+
+<%- include('./includes/footer') %> 

@@ -1,0 +1,48 @@
+<%- include('includes/head', {pageTitle : 'Login | Double Depth'}) %>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DDNQGL"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+   <section class="signup-section">
+    <img src="imgs/double-depth-logo.png" alt="">
+    <div class="form-container">
+        <h1>Login.</h1>
+        <% if(inputData.errorMsg) { %> 
+            <section class="alert">
+                <span>
+                    <strong>!</strong>
+                </span>
+
+                <p><%= inputData.errorMsg %></p>
+            </section>
+       <% }else{ %> 
+            <p>Great to see you're back!</p>
+       <% } %> 
+       
+        <form action="/login" method="POST">
+        <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+        <ul>
+            <li>
+<label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+            </li>
+            <li>
+ <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+            </li>
+        </ul>
+        
+       
+
+        <button class="btn" type="submit">Log in</button>
+    </form>
+    <p>New around here? <a href="/signup"><strong>Sign up</strong></a></p>
+    </div>
+    
+   </section>
+</body>
+
+</html>

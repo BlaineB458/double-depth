@@ -1,0 +1,41 @@
+<%- include('../includes/head', {pageTitle : 'New Portfolio | Double Depth'}) %>
+<link rel="stylesheet" href="/styles/admin.css">
+<script src="/scripts/admin-image-counter.js" defer></script>
+<script src="/scripts/image-preview.js" defer></script>
+</head>
+
+    <%- include('../includes/navbar') %> 
+
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DDNQGL"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <section class="project-delivery-section">
+        <div class="project-delivery-container">
+            <form id="project-delivery-email" action="/project-deliver" method="POST">
+                <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+                <ul >
+                    <li>
+                        <label for="projectTitle">Project Title</label>
+                        <input type="text" id="projectTitle" name="projectTitle" required>
+                    </li>
+                    <li>
+                        <label for="clientEmail">Client's Email</label>
+                        <input type="email" id="clientEmail" name="clientEmail" required>
+                    </li>
+                    <li>
+                        <label for="googleDriveLink">Google Drive Link</label>
+                        <input type="text" id="googleDriveLink" name="googleDriveLink" required>
+                    </li>
+                    <li>
+                        <button class="btn" type="submit">Deliver</button>
+                    </li>
+                </ul>
+                </form>
+        </div>
+    </section>
+</body>
+
+<%- include('../includes/footer') %> 
